@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio | The Future CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap');
+
+        body {
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .heading-serif { font-family: 'Playfair Display', serif; }
+
+        /* The Ghost Backdrop */
+        .backdrop-image {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50vw;
+            height: 100vh;
+            background: linear-gradient(to right, #0a0a0a, transparent), 
+                        url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: -1;
+            filter: grayscale(100%) contrast(120%);
+            transition: transform 0.5s ease-out;
+        }
+
+        .bento-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: #3b82f6; /* Electric Blue Accent */
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-5px);
+        }
+
+        .accent-text { color: #3b82f6; }
+        .accent-bg { background-color: #3b82f6; }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Subtle Background Image -->
+    <div class="backdrop-image" id="hero-image"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference">
+        <div class="text-xl font-bold tracking-tighter">ARCHITECT<span class="accent-text">.</span></div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest opacity-70">
+            <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+            <a href="#vault" class="hover:text-blue-400 transition">Vault</a>
+            <a href="#connect" class="hover:text-blue-400 transition">Connect</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center px-8 md:px-24">
+        <div class="max-w-4xl">
+            <span class="inline-block accent-bg text-black text-xs font-bold px-2 py-1 mb-4">SYSTEM INITIALIZED</span>
+            <h1 class="heading-serif text-7xl md:text-9xl mb-6 italic">Your Name.</h1>
+            <p class="text-xl md:text-3xl font-light leading-relaxed opacity-80 max-w-2xl">
+                Synthesizing <span class="accent-text italic">strategy</span> and <span class="accent-text italic">execution</span> to build high-impact digital ecosystems.
+            </p>
+            <div class="mt-12 flex items-center space-x-6">
+                <div class="flex items-center space-x-2">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <span class="text-xs tracking-widest uppercase opacity-60">Open for Collaborations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Visual CV) -->
+    <section id="experience" class="py-24 px-8 md:px-24 bg-[#0a0a0a]/80">
+        <h2 class="text-sm tracking-[0.3em] uppercase opacity-40 mb-12">Experience Timeline</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Major Role -->
+            <div class="bento-card md:col-span-2 p-8 rounded-2xl scroll-reveal">
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <h3 class="text-2xl font-bold">Director of Strategy</h3>
+                        <p class="opacity-50 tracking-wide">TechCorp International • 2021—Present</p>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="opacity-40"></i>
+                </div>
+                <p class="text-lg opacity-80 mb-6">Led the digital transformation for a $200M portfolio, increasing operational efficiency by 40% through custom AI integrations.</p>
+                <div class="flex space-x-2">
+                    <span class="text-[10px] border border-white/20 px-2 py-1 rounded">AI Strategy</span>
+                    <span class="text-[10px] border border-white/20 px-2 py-1 rounded">Product Ops</span>
+                </div>
+            </div>
+
+            <!-- Smaller Project -->
+            <div class="bento-card p-8 rounded-2xl scroll-reveal">
+                <h3 class="text-xl font-bold mb-2">Startup Founder</h3>
+                <p class="opacity-50 text-sm mb-4">Nexus Lab • 2018—2021</p>
+                <p class="text-sm opacity-70">Scaled a SaaS platform to 50k MRR in 14 months before acquisition.</p>
+            </div>
+
+            <!-- Stats/Skills Card -->
+            <div class="bento-card p-8 rounded-2xl flex flex-col justify-center items-center text-center scroll-reveal">
+                <div class="text-4xl font-bold accent-text mb-2">12+</div>
+                <div class="text-xs uppercase tracking-widest opacity-50">Global Projects Managed</div>
+            </div>
+
+            <!-- Role -->
+            <div class="bento-card md:col-span-2 p-8 rounded-2xl scroll-reveal">
+                <h3 class="text-xl font-bold mb-2">Senior Product Designer</h3>
+                <p class="opacity-50 text-sm mb-4">Creative Flow • 2015—2018</p>
+                <p class="text-sm opacity-70">Designed interfaces for 5 Fortune 500 clients, focusing on accessibility and high-conversion UX.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thought Leadership (The Vault) -->
+    <section id="vault" class="py-24 px-8 md:px-24">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <h2 class="text-sm tracking-[0.3em] uppercase opacity-40 mb-4">Knowledge Vault</h2>
+                <h3 class="heading-serif text-5xl italic">Podcasts & Perspectives</h3>
+            </div>
+            <a href="#" class="text-sm border-b border-blue-500 pb-1 hover:text-blue-400 transition">View All Insights</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Podcast Card -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-zinc-900 mb-6 border border-white/10 flex items-center justify-center">
+                    <i data-lucide="mic" class="w-12 h-12 opacity-20 group-hover:scale-110 transition duration-500"></i>
+                    <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                        <div class="bg-black/60 backdrop-blur px-3 py-1 rounded text-xs">EP. 42 — The Future of Work</div>
+                        <div class="accent-bg p-2 rounded-full text-black"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div>
+                    </div>
+                </div>
+                <h4 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition">Redefining the Professional Identity in 2026</h4>
+                <p class="opacity-60 text-sm">A deep dive into why the static CV is a relic and what is replacing it.</p>
+            </div>
+
+            <!-- Newsletter Card -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-zinc-900 mb-6 border border-white/10 flex items-center justify-center p-8 text-center">
+                   <div>
+                        <div class="text-xs uppercase tracking-[0.2em] opacity-40 mb-2">Latest Newsletter</div>
+                        <div class="text-2xl font-light italic italic">"The leverage of curiosity in a world of AI noise."</div>
+                   </div>
+                </div>
+                <h4 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition">The Weekly Architect Newsletter</h4>
+                <p class="opacity-60 text-sm">Join 5,000+ readers getting weekly insights on leadership and technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="py-24 px-8 md:px-24 bg-white text-black">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-xs tracking-[0.3em] uppercase opacity-40 mb-4">Contact</h2>
+            <h3 class="heading-serif text-6xl mb-12 italic">Let's build something.</h3>
+            
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex flex-col border-b border-black/10 py-4">
+                    <label class="text-[10px] uppercase font-bold mb-2">What's your name?</label>
+                    <input type="text" class="bg-transparent outline-none text-xl placeholder:text-black/20" placeholder="Type here...">
+                </div>
+                <div class="flex flex-col border-b border-black/10 py-4">
+                    <label class="text-[10px] uppercase font-bold mb-2">Interest</label>
+                    <select class="bg-transparent outline-none text-xl cursor-pointer">
+                        <option>Recruit Me</option>
+                        <option>Collaborate</option>
+                        <option>Speaking / Podcast</option>
+                        <option>Just Hello</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2 flex flex-col border-b border-black/10 py-4 mb-8">
+                    <label class="text-[10px] uppercase font-bold mb-2">The Message</label>
+                    <textarea class="bg-transparent outline-none text-xl placeholder:text-black/20" rows="3" placeholder="What are we thinking about?"></textarea>
+                </div>
+                <button class="md:w-max px-12 py-5 bg-black text-white rounded-full uppercase text-xs tracking-widest font-bold hover:bg-zinc-800 transition">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 px-8 text-center text-[10px] tracking-widest opacity-40 uppercase">
+        © 2026 Your Name • Built as a Proof of Work
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Parallax Effect for Background Image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const bg = document.getElementById('hero-image');
+            bg.style.transform = `translateY(${scrolled * 0.1}px) scale(${1 + scrolled * 0.0002})`;
+        });
+    </script>
+</body>
+</html>
